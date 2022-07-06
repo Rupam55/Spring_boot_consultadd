@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Consultadd_spring_boot</title>
+</head>
+<body style="text-align:center">
+    <h1>Basic employee addition and deletion spring app</h1>
+    <div align="center">
+        <table border="1" cellpadding="10">
+            <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Subject</td>
+                <td>Actions</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="emp : ${emplist}">
+                <td th:text="${emp.id}">id</td>
+                <td th:text="${emp.name}">name</td>
+                <td th:text="${emp.age}">subject</td>
+                <td>
+                    <a th:href="@{'/delete/'+${emp.id}}">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="/new">add new employee</a>
+    </div>
+</body>
+</html>

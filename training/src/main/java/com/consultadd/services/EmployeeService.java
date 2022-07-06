@@ -27,4 +27,10 @@ public class EmployeeService {
         }
         return "saved employee data";
     }
+
+    public String deleteEmployee(String id){
+        employeeRepository.deleteById(id);
+        return "deleted record";
+    }
+
 }
